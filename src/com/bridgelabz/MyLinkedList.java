@@ -1,9 +1,7 @@
 package com.bridgelabz;
 
 /**
- * Purpose - To create methods for Linked list operation and
- * add elements
- * Final sequence will be : 56->30->70
+ * Purpose - To create methods for Linked list operation
  */
 public class MyLinkedList {
     public INode head;
@@ -14,6 +12,7 @@ public class MyLinkedList {
         this.tail = null;
     }
 
+    /* This method is used to add the elements to the linked list */
     public void add(INode newNode) {
         if (this.tail == null) {
             this.tail = newNode;
@@ -27,6 +26,20 @@ public class MyLinkedList {
         }
     }
 
+    /* This method is used to append the elements to the linked list */
+    public void append(INode myNode) {
+        if (this.head == null) {
+            this.head = myNode;
+        }
+        if (this.tail == null) {
+            this.tail = myNode;
+        } else {
+            this.tail.setNext(myNode);
+            this.tail = myNode;
+        }
+    }
+
+    /* This method is used for displaying the output */
     public void printMyNodes() {
         StringBuilder myNodes = new StringBuilder("My Nodes : ");
         INode tempNode = head;
