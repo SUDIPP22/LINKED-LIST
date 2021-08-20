@@ -62,6 +62,19 @@ public class MyLinkedList {
         tempNode.setNext(null);
     }
 
+    /* This method is used for searching position of a node element in the list */
+    public void searchMyNode() {
+        INode tempNode = head;
+        int position = 0;
+        while (tempNode != null) {
+            position++;
+            if (tempNode.getKey().equals(30)) {
+                System.out.println("Your Node With Key value 30 is present at " +position+ " in the list");
+            }
+            tempNode = tempNode.getNext();
+        }
+    }
+
     /* This method is used for displaying the output */
     public void printMyNodes() {
         StringBuilder myNodes = new StringBuilder("My Nodes : ");

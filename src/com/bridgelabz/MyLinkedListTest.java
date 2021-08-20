@@ -111,4 +111,26 @@ public class MyLinkedListTest {
                 myLinkedList.tail.equals(mySecondNode);
         Assertions.assertTrue(result);
     }
+
+    /**
+     * This is the sixth case which is used for searching the list to
+     * find node with key value 30
+     */
+    @Test
+    void givenElementWhenSearchingShouldPassLinkedListResult() {
+        MyNode<Integer> myFirstNode = new MyNode<>(56);
+        MyNode<Integer> mySecondNode = new MyNode<>(30);
+        MyNode<Integer> myThirdNode = new MyNode<>(70);
+        MyLinkedList myLinkedList = new MyLinkedList();
+        myLinkedList.append(myFirstNode);
+        myLinkedList.append(mySecondNode);
+        myLinkedList.append(myThirdNode);
+        myLinkedList.printMyNodes();
+        myLinkedList.searchMyNode();
+        boolean result = myLinkedList.head.equals(myFirstNode) &&
+                myLinkedList.head.getNext().equals(mySecondNode) &&
+                myLinkedList.tail.equals(myThirdNode);
+        System.out.println(result);
+        Assertions.assertTrue(result);
+    }
 }
