@@ -69,10 +69,22 @@ public class MyLinkedList {
         while (tempNode != null) {
             position++;
             if (tempNode.getKey().equals(30)) {
-                System.out.println("Your Node With Key value 30 is present at " +position+ " in the list");
+                System.out.println("Your Node With Key value 30 is present at position " +position+ " in the list");
             }
             tempNode = tempNode.getNext();
         }
+    }
+
+    /* This method is used for inserting a new key value at particular position  */
+    public void insert(int key, int position) {
+        MyNode newNode = new MyNode(key);
+        MyNode nodeAtPreviousIndex = (MyNode) head;
+        for (int i = 0; i < position - 1; i++) {
+            nodeAtPreviousIndex = (MyNode) nodeAtPreviousIndex.next;
+        }
+        newNode.next = nodeAtPreviousIndex.next;
+        nodeAtPreviousIndex.next = newNode;
+        System.out.println("After inserting a new node with key value " + key + " at position " + position + " : ");
     }
 
     /* This method is used for displaying the output */

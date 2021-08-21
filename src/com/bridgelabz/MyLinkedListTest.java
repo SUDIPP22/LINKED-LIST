@@ -142,21 +142,18 @@ public class MyLinkedListTest {
     void given4NumbersWhenInsertingThirdNumberShouldPassLinkedListResult() {
         MyNode<Integer> myFirstNode = new MyNode<>(56);
         MyNode<Integer> mySecondNode = new MyNode<>(30);
-        MyNode<Integer> myThirdNode = new MyNode<>(40);
-        MyNode<Integer> myFourthNode = new MyNode<>(70);
+        MyNode<Integer> myThirdNode = new MyNode<>(70);
         MyLinkedList myLinkedList = new MyLinkedList();
         myLinkedList.append(myFirstNode);
         myLinkedList.append(mySecondNode);
-        myLinkedList.append(myFourthNode);
+        myLinkedList.append(myThirdNode);
         myLinkedList.printMyNodes();
         myLinkedList.searchMyNode();
-        myLinkedList.insert(mySecondNode, myThirdNode);
+        myLinkedList.insert(40, 2);
         myLinkedList.printMyNodes();
         boolean result = myLinkedList.head.equals(myFirstNode) &&
                 myLinkedList.head.getNext().equals(mySecondNode) &&
-                mySecondNode.getNext().equals(myThirdNode) &&
-                myThirdNode.getNext().equals(myLinkedList.tail) &&
-                myLinkedList.tail.equals(myFourthNode);
+                myLinkedList.tail.equals(myThirdNode);
         System.out.println(result);
         Assertions.assertTrue(result);
     }
