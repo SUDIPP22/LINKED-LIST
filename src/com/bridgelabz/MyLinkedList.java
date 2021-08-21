@@ -87,6 +87,17 @@ public class MyLinkedList {
         System.out.println("After inserting a new node with key value " + key + " at position " + position + " : ");
     }
 
+    /* This method is used for removing a key at particular position */
+    public void remove(int position) {
+        MyNode tempNode = (MyNode) head;
+        MyNode currentNode = (MyNode) head;
+        for (int i = 0; i < position; i++) {
+            tempNode = currentNode;
+            currentNode = (MyNode) currentNode.next;
+        }
+        tempNode.next = currentNode.next;
+    }
+
     /* This method is used for displaying the output */
     public void printMyNodes() {
         StringBuilder myNodes = new StringBuilder("My Nodes : ");

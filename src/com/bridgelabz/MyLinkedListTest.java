@@ -157,4 +157,31 @@ public class MyLinkedListTest {
         System.out.println(result);
         Assertions.assertTrue(result);
     }
+
+    /**
+     * This is the eighth test case which is inserting 40 after 30  and
+     * then removing 40
+     * Final sequence will be 56->30->70
+     */
+    @Test
+    void given3NumbersWhenInsertingAndDeletingFourthNumberShouldPassLinkedListResult() {
+        MyNode<Integer> myFirstNode = new MyNode<>(56);
+        MyNode<Integer> mySecondNode = new MyNode<>(30);
+        MyNode<Integer> myThirdNode = new MyNode<>(70);
+        MyLinkedList myLinkedList = new MyLinkedList();
+        myLinkedList.append(myFirstNode);
+        myLinkedList.append(mySecondNode);
+        myLinkedList.append(myThirdNode);
+        myLinkedList.printMyNodes();
+        myLinkedList.searchMyNode();
+        myLinkedList.insert(40, 2);
+        myLinkedList.printMyNodes();
+        myLinkedList.remove(2);
+        myLinkedList.printMyNodes();
+        boolean result = myLinkedList.head.equals(myFirstNode) &&
+                myLinkedList.head.getNext().equals(mySecondNode) &&
+                myLinkedList.tail.equals(myThirdNode);
+        System.out.println(result);
+        Assertions.assertTrue(result);
+    }
 }
